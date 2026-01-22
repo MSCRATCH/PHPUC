@@ -1,0 +1,10 @@
+<FilesMatch ".*">
+Require all denied
+</FilesMatch>
+
+<FilesMatch "\.(jpe?g|png|zip|rar)$">
+Require all granted
+</FilesMatch>
+
+php_flag engine off
+Options -ExecCGI
