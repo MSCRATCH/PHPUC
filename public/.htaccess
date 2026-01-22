@@ -1,0 +1,31 @@
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+RewriteRule ^file/(.+)$ index.php?p=file&file=$1 [L,QSA]
+
+RewriteRule ^profile_image/(.+)$ index.php?p=profile_image&file=$1 [L,QSA]
+
+RewriteRule ^profile/([a-f0-9]+)$ index.php?p=profile&id=$1 [L,QSA]
+
+RewriteRule ^blocklist/command/([\w@.\-+]+)$ index.php?p=blocklist&command=$1 [L,QSA]
+
+RewriteRule ^manage_contents/content/([a-zA-Z0-9_-]+)$ index.php?p=manage_contents&content=$1 [L,QSA]
+
+RewriteRule ^upload_files/file/([a-zA-Z0-9_-]+)$ index.php?p=upload_files&file_id=$1 [L,QSA]
+
+RewriteRule ^manage_blog/post/([a-zA-Z0-9_-]+)$ index.php?p=manage_blog&post=$1 [L,QSA]
+
+RewriteRule ^manage_navigations/primary_navigation_element/([a-zA-Z0-9_-]+)$ index.php?p=manage_navigations&primary_navigation_element=$1 [L,QSA]
+
+RewriteRule ^manage_navigations/secondary_navigation_element/([a-zA-Z0-9_-]+)$ index.php?p=manage_navigations&secondary_navigation_element=$1 [L,QSA]
+
+RewriteRule ^news/([a-zA-Z0-9_-]+)$ index.php?p=news&id=$1 [L,QSA]
+
+RewriteRule ^([a-zA-Z0-9_-]+)/page/([0-9]+)$ index.php?p=$1&page=$2 [L,QSA]
+
+RewriteRule ^([a-zA-Z0-9_-]+)$ index.php?p=$1 [L,QSA]
+
+RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)$ index.php?p=$1&id=$2 [L,QSA]
